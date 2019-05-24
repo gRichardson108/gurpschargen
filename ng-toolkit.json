@@ -1,0 +1,13 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "project": "gurpschargen",
+    "skipInstall": false,
+    "directory": ".",
+    "clientProject": "gurpschargen",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

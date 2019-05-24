@@ -1,0 +1,28 @@
+<div *ngIf="pc">
+  <label>name:
+    <input [(ngModel)]="pc.name" placeholder="name"/>
+  </label>
+
+<mat-list>
+  <h3 mat-subheader>Attributes</h3>
+  <mat-list-item *ngFor="let attr of pc.attributes">
+    <app-character-trait-purchaser></app-character-trait-purchaser>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+  <h3 mat-subheader>Advantages</h3>
+  <mat-list-item *ngFor="let adv of pc.advantages">
+    <h4 mat-line>{{adv.name}}</h4>
+    <p mat-line> {{adv.cost}} </p>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+  <h3 mat-subheader>Skills</h3>
+  <mat-list-item *ngFor="let skill of skills">
+    <h4 mat-line>{{skill.name}}</h4>
+    <p mat-line> {{skill.attr.abbrev}} </p>
+  </mat-list-item>
+
+</mat-list>
+
+</div>
