@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Advantage } from '../models/advantage';
 
 @Component({
   selector: 'app-advantage-line-display',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./advantage-line-display.component.css']
 })
 export class AdvantageLineDisplayComponent implements OnInit {
+
+  @Input() advantage: Advantage;
 
   constructor() { }
 
