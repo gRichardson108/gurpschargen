@@ -10,7 +10,8 @@ export interface ICharacterTrait {
     getEffectiveLevel(pointsSpent: number): number;
 }
 
-export interface IPurchasedCharacterTrait {
+export class PurchasedCharacterTrait {
     trait: ICharacterTrait;
     pointsSpent: number;
+    effectiveLevel: number;
 }

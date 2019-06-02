@@ -6,14 +6,13 @@
 <mat-list>
   <h3 mat-subheader>Attributes</h3>
   <mat-list-item *ngFor="let attr of pc.attributes">
-    <app-character-trait-purchaser></app-character-trait-purchaser>
+    <app-character-trait-purchaser [trait]="attr"></app-character-trait-purchaser>
   </mat-list-item>
 
   <mat-divider></mat-divider>
   <h3 mat-subheader>Advantages</h3>
   <mat-list-item *ngFor="let adv of pc.advantages">
-    <h4 mat-line>{{adv.name}}</h4>
-    <p mat-line> {{adv.cost}} </p>
+    <app-character-trait-purchaser [trait]="adv"></app-character-trait-purchaser>
   </mat-list-item>
 
   <mat-divider></mat-divider>

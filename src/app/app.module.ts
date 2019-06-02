@@ -12,12 +12,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharacterFormComponent } from './character-form/character-form.component';
 import { CharacterTraitPurchaserComponent } from './character-trait-purchaser/character-trait-purchaser.component';
+import { AdvantageLineDisplayComponent } from './advantage-line-display/advantage-line-display.component';
+import { PrimaryAttributeLineDisplayComponent } from './primary-attribute-line-display/primary-attribute-line-display.component';
+import { SkillLineDisplayComponent } from './skill-line-display/skill-line-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterFormComponent,
-    CharacterTraitPurchaserComponent
+    CharacterTraitPurchaserComponent,
+    AdvantageLineDisplayComponent,
+    PrimaryAttributeLineDisplayComponent,
+    SkillLineDisplayComponent
   ],
   imports: [
     BrowserModule,

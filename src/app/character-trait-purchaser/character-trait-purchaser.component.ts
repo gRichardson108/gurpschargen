@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IPurchasedCharacterTrait } from '../models/traits';
+import { Component, OnInit, Input } from '@angular/core';
+import { PurchasedCharacterTrait, ICharacterTrait } from '../models/traits';
 import { Attribute } from '../models/attribute';
 
 @Component({
@@ -9,23 +9,27 @@ import { Attribute } from '../models/attribute';
 })
 export class CharacterTraitPurchaserComponent implements OnInit {
 
-  purchased: IPurchasedCharacterTrait;
+  @Input() trait: ICharacterTrait;
+  public purchased: PurchasedCharacterTrait = new PurchasedCharacterTrait();
 
   constructor() {
-    this.purchased = {
-      trait: {
-        name: "Strength",
-        abbrev: "ST",
-        cost: 10,
-      } as Attribute,
-      pointsSpent: 0
-    }
   }
 
   ngOnInit() {
+    this.purchased = Object.assign(this.purchased, {
+      trait: this.trait,
+      pointsSpent: 0,
+      effectiveLevel: 0,
+    });
   }
 
-  getTrait(): void {
+  increment(): void {
+    this.purchased.pointsSpent++;
+    this.purchased.effectiveLevel = this.purchased.trait.getEffectiveLevel(this.purchased.pointsSpent);
   }
 
+  decrement(): void {
+    this.purchased.pointsSpent--;
+    this.purchased.effectiveLevel = this.purchased.trait.getEffectiveLevel(this.purchased.pointsSpent);
+  }
 }
