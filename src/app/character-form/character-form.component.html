@@ -5,15 +5,17 @@
 
 <mat-list>
   <h3 mat-subheader>Attributes</h3>
-  <mat-list-item *ngFor="let attr of pc.attributes">
-    <app-character-trait-purchaser [trait]="attr"></app-character-trait-purchaser>
-  </mat-list-item>
+
+  <app-trait-table [traits]="pc.attributes" 
+                   [headerColumns]="['name', 'cost']"
+                   [purchaser]="true">
+  </app-trait-table>
 
   <mat-divider></mat-divider>
-  <h3 mat-subheader>Advantages</h3>
-  <mat-list-item *ngFor="let adv of pc.advantages">
-    <app-character-trait-purchaser [trait]="adv"></app-character-trait-purchaser>
-  </mat-list-item>
+  <app-trait-table [traits]="pc.advantages" 
+                   [headerColumns]="['name', 'cost', 'selfControlRoll']"
+                   [purchaser]="false">
+  </app-trait-table>
 
   <mat-divider></mat-divider>
   <h3 mat-subheader>Skills</h3>

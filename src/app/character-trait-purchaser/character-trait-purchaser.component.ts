@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PurchasedCharacterTrait, ICharacterTrait } from '../models/traits';
 import { Attribute } from '../models/attribute';
+import { ICharacterTraitService, CharacterTraitService } from '../character-trait.service';
 
 @Component({
   selector: 'app-character-trait-purchaser',
@@ -9,18 +10,17 @@ import { Attribute } from '../models/attribute';
 })
 export class CharacterTraitPurchaserComponent implements OnInit {
 
-  @Input() trait: ICharacterTrait;
-  public purchased: PurchasedCharacterTrait = new PurchasedCharacterTrait();
+  @Input() traitName: string;
 
-  constructor() {
+  private traitService: ICharacterTraitService;
+  private purchased: PurchasedCharacterTrait;
+
+  constructor(traitService: CharacterTraitService) {
+    this.traitService = traitService;
   }
 
   ngOnInit() {
-    this.purchased = Object.assign(this.purchased, {
-      trait: this.trait,
-      pointsSpent: 0,
-      effectiveLevel: 0,
-    });
+    this.purchased = this.traitService.getTrait(this.traitName);
   }
 
   increment(): void {

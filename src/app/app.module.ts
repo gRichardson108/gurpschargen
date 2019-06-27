@@ -6,15 +6,14 @@ import { FormsModule } from '@angular/forms';
 // Angular Material library imports
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon'; 
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharacterFormComponent } from './character-form/character-form.component';
 import { CharacterTraitPurchaserComponent } from './character-trait-purchaser/character-trait-purchaser.component';
 import { AdvantageLineDisplayComponent } from './advantage-line-display/advantage-line-display.component';
-import { PrimaryAttributeLineDisplayComponent } from './primary-attribute-line-display/primary-attribute-line-display.component';
-import { SkillLineDisplayComponent } from './skill-line-display/skill-line-display.component';
 import { TraitTableComponent } from './trait-table/trait-table.component';
 
 @NgModule({
@@ -23,8 +22,6 @@ import { TraitTableComponent } from './trait-table/trait-table.component';
     CharacterFormComponent,
     CharacterTraitPurchaserComponent,
     AdvantageLineDisplayComponent,
-    PrimaryAttributeLineDisplayComponent,
-    SkillLineDisplayComponent,
     TraitTableComponent
   ],
   imports: [
@@ -37,6 +34,7 @@ import { TraitTableComponent } from './trait-table/trait-table.component';
     MatListModule,
     MatButtonModule,
     MatIconModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
